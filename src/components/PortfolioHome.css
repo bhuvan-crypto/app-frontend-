@@ -1,0 +1,76 @@
+.portfolio-home {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(79,140,255,0.10);
+  text-align: center;
+}
+.portfolio-home__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(79,140,255,0.12);
+}
+.portfolio-home__name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4f8cff;
+  margin-bottom: 0.5rem;
+}
+.portfolio-home__bio {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+.portfolio-home__section {
+  margin-bottom: 2.5rem;
+}
+.portfolio-home__section-title {
+  font-size: 1.3rem;
+  color: #6ee7b7;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.portfolio-home__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.portfolio-home__skill {
+  background: #e0e7ff;
+  color: #4f8cff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.portfolio-home__projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+.portfolio-home__project {
+  background: #f0fff4;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(110,231,183,0.08);
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+.portfolio-home__contact {
+  font-size: 1.1rem;
+  color: #333;
+}
+.portfolio-home__contact a {
+  color: #4f8cff;
+  text-decoration: none;
+  font-weight: 600;
+}
