@@ -1,4 +1,4 @@
-FROM node:22 AS builder
+FROM node:22.12.0 AS builder
 
 # Declare build time environment variables
 ARG REACT_APP_NODE_ENV
