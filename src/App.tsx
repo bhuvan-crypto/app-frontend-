@@ -1,22 +1,40 @@
+import Contact from "./views/Contact";
+import Navbar from "./components/Navbar";
+import About from "./views/About";
+import Home from './views/Home'
+import Services from "./views/Services";
+import Projects from "./views/Projects";
+import LoadingScreen from "./components/LoadingScreen";
+import { ThemeProvider } from "./themeProvider";
+import * as React from "react";
 
+function App() {
+  const [loading, setLoading] = React.useState(true)
+  React.useEffect(() => {
+    setTimeout(() => setLoading(false), 1000)
+  }, [])
 
-import PortfolioHome from './components/PortfolioHome';
-import TopBar from './components/TopBar';
-import PdfQA from './components/PdfQA';
-import DummyProject from './components/DummyProject';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  return (
+    <ThemeProvider>
+      <>
 
-// ...existing code...
+        {!loading ? (
+          < >
+            <Navbar />
+            <Home />
+            <About />
+            <Services />
+            <Projects />
+            <Contact />
+          </>
 
-const App = () => (
-    <BrowserRouter>
-        <TopBar />
-        <Routes>
-            <Route path="/" element={<PortfolioHome />} />
-            <Route path="/pdf-rag" element={<PdfQA />} />
-            <Route path="/dummy" element={<DummyProject />} />
-        </Routes>
-    </BrowserRouter>
-);
+        ) : (
+          <LoadingScreen />
+        )}
+      </>
+    </ThemeProvider>
+
+  );
+}
 
 export default App;
