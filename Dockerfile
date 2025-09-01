@@ -17,6 +17,6 @@ RUN npm run build
 
 # Serve stage with SPA support
 FROM socialengine/nginx-spa
-COPY --from=builder /app/dist /app
+COPY --from=builder /app/build /app
 EXPOSE 80
 
