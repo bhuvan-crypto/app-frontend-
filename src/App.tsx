@@ -7,6 +7,8 @@ import Projects from "./views/Projects";
 import LoadingScreen from "./components/LoadingScreen";
 import { ThemeProvider } from "./themeProvider";
 import * as React from "react";
+import PdfQA from "./components/PdfQA";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = React.useState(true)
@@ -17,23 +19,27 @@ function App() {
   return (
     <ThemeProvider>
       <>
-
         {!loading ? (
-          < >
+          <Router>
             <Navbar />
-            <Home />
-            <About />
-            <Services />
-            <Projects />
-            <Contact />
-          </>
-
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <Home />
+                  <About />
+                  <Services />
+                  <Projects />
+                  <Contact />
+                </>
+              } />
+              <Route path="/pdf-qa" element={<PdfQA />} />
+            </Routes>
+          </Router>
         ) : (
           <LoadingScreen />
         )}
       </>
     </ThemeProvider>
-
   );
 }
 

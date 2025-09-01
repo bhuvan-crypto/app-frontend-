@@ -164,6 +164,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <div className="h-14 w-full"></div>
     </>
   );
 };
