@@ -15,10 +15,8 @@ RUN npm install --force
 COPY . .
 RUN npm run build
 
-# Serve with Nginx
-FROM nginx:1.23-alpine
-WORKDIR /usr/share/nginx/html
-RUN rm -rf *
-COPY --from=builder /app/dist .
+# Serve stage with SPA support
+FROM socialengine/nginx-spa
+COPY --from=builder /app/dist /app
 EXPOSE 80
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+
