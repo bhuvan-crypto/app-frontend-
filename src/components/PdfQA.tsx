@@ -17,7 +17,7 @@ const PdfQA: React.FC = () => {
     const checkPdf = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${pythonBackendUrl}/check-vectorstore`);
+        const res = await fetch(`${pythonBackendUrl}/check-vectorstore/`);
         if (!res.ok) throw new Error('Failed to check PDF');
         const data = await res.json();
         setPdfExists(data.exists);
@@ -84,7 +84,7 @@ const PdfQA: React.FC = () => {
     setError('');
     setAnswer('');
     try {
-      const response = await fetch(`${pythonBackendUrl}/ask-basic/`, {
+      const response = await fetch(`${pythonBackendUrl}/ask-basic/?question=${JSON.stringify(question)}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const PdfQA: React.FC = () => {
         throw new Error(`API error: ${response.status} - ${errText}`);
       }
       const data = await response.json();
-      setAnswer(data.answer || 'No answer found.');
+      setAnswer(data.result || 'No answer found.');
     } catch (err: any) {
       setError(err.message || 'Error occurred');
     } finally {

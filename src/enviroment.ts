@@ -1,3 +1,3 @@
-const pythonBackendUrl = 'https://bhuvan-se.duckdns.org/api-python';
+const pythonBackendUrl = 'https://bhuvan-se.duckdns.org/api';
 
 export { pythonBackendUrl };
