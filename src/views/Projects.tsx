@@ -21,7 +21,7 @@ const Projects = () => {
         </h4>
         <div className="mt-8 flex justify-between items-stretch flex-wrap">
           {projectData.map((el) => (
-            <Card name={el.name} desc={el.desc}/>
+            <Card name={el.name} desc={el.desc} route={el.route}/>
           ))}
         </div>
         {/* <a

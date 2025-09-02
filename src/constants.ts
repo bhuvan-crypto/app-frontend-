@@ -86,12 +86,19 @@ export const serviceData =[
 ]
 
 
-export const projectData = [
+export const projectData:{
+  name: string,
+  desc: string,
+  img: string,
+  link: string,
+  route?: string
+}[] = [
   {
     name: 'QA on Pdf',
     desc: `A collaborative text editor that allows multiple users to edit documents simultaneously. Built with Socket.IO for real-time synchronization and React for an interactive frontend.`,
     img: "https://img.icons8.com/external-flat-juicy-fish/64/000000/external-collaboration-business-flat-flat-juicy-fish.png",
-    link: "https://wind-nosy-lathe.glitch.me/"
+    link: "https://wind-nosy-lathe.glitch.me/",
+    route: "/pdf-qa",
   },
   {
     name: 'Dynamic React Table',
